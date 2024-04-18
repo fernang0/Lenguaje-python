@@ -18,9 +18,19 @@
 # else:
 #     print("Usted es un maldito regodion");
 
-ticket = True;
+# ticket_valido = False;
+# folio_valido = 123;
+# n_folio=int(input("Ingrese el numero de folio: "));
 
-if ticket:
-    print("Este ticket es valido");
-else:
-    print("Este ticket caduco");
+# if folio_valido == n_folio:
+#     ticket_valido = True;
+
+# if ticket_valido:
+#     print("Este ticket es valido");
+# else:
+#     print("Este ticket no es valido");
+
+
+lista_numeros = [1,2,3,4,5];
+
+print(lista_numeros[1])
