@@ -4,7 +4,7 @@ def contarvocales(palabra):
         if letra.lower() in 'aeiou':
             contador+=1;
     return contador;
-def contadordeletras(palabra):
+def contarletras(palabra):
     contador = 0;
     for letra in palabra:
         contador += 1;
