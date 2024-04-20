@@ -10,10 +10,12 @@ def contarletras(palabra):
         contador += 1;
     return contador;
 def contarpalabras(palabra):
-    contador = 1;
-    for letra in palabra:
-        if letra == " ":
-            contador += 1;
-    return contador;
+    if palabra == True:
+        contador = 1;
+        for letra in palabra:
+            if letra == " ":
+                contador += 1;
+        return contador;
+    else:return 0;
 
-print(contarpalabras("Hola mundo aeiou"))
+print(contarpalabras(""))
