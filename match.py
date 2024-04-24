@@ -8,16 +8,10 @@ def contarvocales(palabra):
 def contarletras(palabra):
     contador = 0;
     for letra in palabra:
-        contador += 1;
-    return contador;
-
-def contarpalabras(palabra):
-    contador = 0;
-    for letra in palabra:
-        if letra == " ":
+        if letra != " ":
             contador += 1;
     return contador;
-def contapalabras(palabras):
+def contarpalabras(palabras):
     dentro = 1;
     fuera = 0;
     estado = fuera;
@@ -38,3 +32,11 @@ print("""
 opcion = int(input("Ingrese una opcion: "));
 match opcion:
     case 1:
+        texto = str(input("Ingrese el texto: "));
+        print("La cantidad de vocales es de: ", contarvocales(texto));
+    case 2:
+        texto = str(input("Ingrese el texto: "));
+        print("La cantidad de letras es de: ", contarletras(texto));
+    case 3:
+        texto = str(input("Ingrese el texto: "));
+        print("La cantidad de palabras es de: ", contarpalabras(texto));
