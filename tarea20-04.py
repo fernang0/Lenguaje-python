@@ -31,4 +31,4 @@ def contapalabras(palabras):
     if estado == dentro:
         return contador+1;
             
-print(contapalabras("algo algo algo"))
+print(contarpalabras("algo algo algo"))
