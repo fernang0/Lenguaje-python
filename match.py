@@ -28,6 +28,7 @@ print("""
 1) Contar vocales
 2) Contar letras
 3) Contar palabras
+4) Todo
 """);
 opcion = int(input("Ingrese una opcion: "));
 match opcion:
@@ -40,3 +41,9 @@ match opcion:
     case 3:
         texto = str(input("Ingrese el texto: "));
         print("La cantidad de palabras es de: ", contarpalabras(texto));
+    case 4:
+        texto = str(input("Ingrese el texto: "));
+        print("La contidad de vocales es de: ", contarvocales(texto));
+        print("La cantidad de letras es de: ", contarletras(texto));
+        print("La cantidad de palabras es de: ", contarpalabras(texto));
+
