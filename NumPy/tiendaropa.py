@@ -12,7 +12,7 @@ def mostrar_precios():
             print(prenda, talla, "=", "$",precios[x][y]);
             y+=1;
         x+=1;y=0;
-def tallas():
+def mostrar_tallas():
     print("""
 Que talla:
 1)Small
@@ -21,13 +21,21 @@ Que talla:
 0)Menu principal
     """);
 def camisetas():
-    tallas();
+    mostrar_tallas();
     opcion = int(input("Que talla desea comprar: "));
     match opcion:
         case 1:
-        #pedir cantidad y ingresar la cantidad en la respectiva cordenada de matriz vacia para luego multiplicar matriz carrito por precios
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[0,0] = cantidad;
+            camisetas();
         case 2:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[0,1] = cantidad;
+            camisetas();
         case 3:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[0,2] = cantidad;
+            camisetas();
         case 0:
             comprar();
 
@@ -53,4 +61,6 @@ def comprar():
             pantalones();
         case 3:
             chaquetas();
-mostrar_precios()
+mostrar_precios();
+comprar();
+print(carrito)
