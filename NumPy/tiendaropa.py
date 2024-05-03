@@ -40,18 +40,49 @@ def camisetas():
             comprar();
 
 def pantalones():
-    tallas();
+    mostrar_tallas();
     opcion = int(input("Que talla desea comprar: "));
-
+    match opcion:
+        case 1:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[1,0] = cantidad;
+            camisetas();
+        case 2:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[1,1] = cantidad;
+            camisetas();
+        case 3:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[1,2] = cantidad;
+            camisetas();
+        case 0:
+            comprar();
 def chaquetas():
-    tallas();
+    mostrar_tallas();
     opcion = int(input("Que talla desea comprar: "));
-
+    match opcion:
+        case 1:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[2,0] = cantidad;
+            camisetas();
+        case 2:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[2,1] = cantidad;
+            camisetas();
+        case 3:
+            cantidad = int(input("Ingrese la cantidad: "));
+            carrito[2,2] = cantidad;
+            camisetas();
+        case 0:
+            comprar();
+def total():
+    return (np.sum(carrito*precios))
 def comprar():
     print("""
 1) Camisetas
 2) Pantalones
 3) Chaquetas
+0) Mostrar total de mi carrito
 """);
     opcion = int(input("Que desea comprar: "));
     match opcion:
@@ -61,6 +92,7 @@ def comprar():
             pantalones();
         case 3:
             chaquetas();
+        case 0:
+            print("El total de su compra es de: ", total());
 mostrar_precios();
 comprar();
-print(carrito)
