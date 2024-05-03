@@ -12,35 +12,25 @@ def mostrar_precios():
             print(prenda, talla, "=", "$",precios[x][y])
             y+=1;
         x+=1;y=0;
-def camisetas():
+def tallas():
     print("""
 Que talla:
 1)Small
 2)Medium
 3)Large
 0)Menu principal
-""")
-opcion = int(input("Que talla desea comprar: "))
+    """)
+def camisetas():
+    tallas();
+    opcion = int(input("Que talla desea comprar: "));
 
 def pantalones():
-    print("""
-Que talla:
-1)Small
-2)Medium
-3)Large
-0)Menu principal
-""")
-opcion = int(input("Que talla desea comprar: "))
+    tallas();
+    opcion = int(input("Que talla desea comprar: "))
 
 def chaquetas():
-    print("""
-Que talla:
-1)Small
-2)Medium
-3)Large
-0)Menu principal
-""")
-opcion = int(input("Que talla desea comprar: "))
+    tallas();
+    opcion = int(input("Que talla desea comprar: "))
 
 def comprar():
     print("""
