@@ -1,4 +1,28 @@
 vehiculos = [[],[],[],[]];
+
+def formato(patente):
+
+    if len(patente) == 6:
+        for a in range(0,2):
+            if patente[a] in "abcdefghijklmnopqrstuvwxyz":
+                for i in range(2,4):
+                    if patente[i] in "abcdefghijklmnopqrstuvwxyz":
+                        for n in range(4,6):
+                            if patente[n] in "1234567890":
+                                return True;
+                            else:
+                                return False;
+                    elif patente[i] in "1234567890":
+                        for n in range(4,6):
+                            if patente[n] in "1234567890":
+                                return True;
+                            else:
+                                return False;
+                    else:
+                        return False;
+            else:
+                return False;
+
 while True:
     print("""
 Bienvenido al Parking VIP
