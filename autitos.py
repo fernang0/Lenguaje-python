@@ -1,27 +1,27 @@
 vehiculos = [[],[],[],[]];
 
-def formato(patente):
-
+def validar(patente):
+    caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    numeros = "1234567890";
     if len(patente) == 6:
-        for a in range(0,2):
-            if patente[a] in "abcdefghijklmnopqrstuvwxyz":
-                for i in range(2,4):
-                    if patente[i] in "abcdefghijklmnopqrstuvwxyz":
-                        for n in range(4,6):
-                            if patente[n] in "1234567890":
-                                return True;
-                            else:
-                                return False;
-                    elif patente[i] in "1234567890":
-                        for n in range(4,6):
-                            if patente[n] in "1234567890":
-                                return True;
-                            else:
-                                return False;
-                    else:
-                        return False;
+        if patente[0] in caracteres and patente[1] in caracteres:
+            if patente[2] in caracteres and patente[3] in caracteres:
+                if patente[4] in numeros and patente[5] in numeros:
+                    return True;
+                else:
+                    return False;
+            elif patente[2] in numeros and patente[3] in numeros:
+                if patente[4] in numeros and patente[5] in numeros:
+                    return True;
+                else:
+                    return False;
             else:
                 return False;
+        else:
+            return False;
+    else:
+        return False;
+
 
 while True:
     print("""
@@ -37,9 +37,9 @@ Bienvenido al Parking VIP
     match opcion:
         case 1:
             piso = int(input("Ingrese el piso en el cual quiere ingresar el vehiculo(1-4): "));
-            patente = str(input("Ingrese la patente: "));
-            while len(patente) != 6:
-                patente = str(input("Ingrese la patente correcta, debe tener 6 digitos(XX00XX): "));
+            patente = (str(input("Ingrese la patente: "))).upper();
+            while validar(patente) == False:
+                patente = (str(input("Ingrese la patente correcta, debe tener 6 digitos(AABB99-AA8899): "))).upper();
             vehiculos[piso-1].append(patente);
             print(vehiculos);
         case 2:
@@ -58,8 +58,10 @@ Bienvenido al Parking VIP
                 case 3:
                     continue;
         case 3:
-            borrar = str(input(("Ingrese el vehículo a borrar: ")));
-            vehiculos.remove(borrar);
+            borrar = (str(input(("Ingrese el vehículo a borrar: ")))).upper();
+            for n in range(0,4):
+                if borrar in vehiculos[n]:
+                    vehiculos[n].remove(borrar);
         case 4:
             print("""
 1.- Mostar cantidad de vehículos en total
