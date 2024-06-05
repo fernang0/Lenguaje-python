@@ -1,7 +1,7 @@
 vehiculos = [[],[],[],[]];
 
 def formato(patente):
-
+    #esta funcion se puede mejorar
     if len(patente) == 6:
         for a in range(0,2):
             if patente[a] in "abcdefghijklmnopqrstuvwxyz":
