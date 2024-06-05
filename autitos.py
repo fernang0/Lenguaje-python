@@ -1,8 +1,13 @@
 vehiculos = [[],[],[],[]];
 
+<<<<<<< HEAD
 def validar(patente):
     caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     numeros = "1234567890";
+=======
+def formato(patente):
+    #esta funcion se puede mejorar
+>>>>>>> f4d876e (ordenando y desechando)
     if len(patente) == 6:
         if patente[0] in caracteres and patente[1] in caracteres:
             if patente[2] in caracteres and patente[3] in caracteres:
